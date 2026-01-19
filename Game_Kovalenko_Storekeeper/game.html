@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Кладовщик - Игра</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/game.css">
+    
+</head>
+<body>
+    <div class="game-container">
+        <!-- Шапка игры -->
+        <div class="game-header">
+            <div class="player-info">
+                <span id="company-name">Компания</span> | 
+                <span id="player-name">Игрок</span>
+            </div>
+            
+            <div class="level-info">
+                Уровень <span id="current-level">1</span>: 
+                <span id="level-name">Найди и дважды кликни</span>
+            </div>
+            
+            <div class="score-display">
+                Очки: <span id="score">0</span> / <span id="plan-score">0</span>
+            </div>
+            
+            <div class="timer" id="timer">
+                ⏱️ <span id="time-left">90</span>с
+            </div>
+            
+            <button class="btn btn-small" id="emergency-stop">
+                ⏹️ Завершить уровень
+            </button>
+        </div>
+        
+        <!-- Верхняя часть: игровое поле -->
+        <div class="game-area" id="game-area">
+            <div class="party-container" id="party-container">
+                <!-- Здесь будут создаваться предметы через JS -->
+            </div>
+        </div>
+        
+        <!-- Нижняя часть: управление -->
+        <div class="game-controls" id="game-controls">
+            <!-- Для уровня 1: вопрос и найденные предметы -->
+            <div class="question-display" id="question-display">
+                Найдите все предметы категории: <span id="target-category">Еда</span>
+            </div>
+            <div class="question-display" id="question-display-hint">
+                Дважды кликните по нужному предмету
+            </div>
+            <!-- Для уровня 2: ящики -->
+            <div class="boxes-container" id="boxes-container">
+                <!-- Ящики будут создаваться через JS -->
+            </div>
+            
+            <!-- Для всех уровней: найденные предметы -->
+            <div class="found-items" id="found-items">
+                <!-- Найденные эмодзи будут добавляться здесь -->
+            </div>
+            
+            <!-- Для уровня 3: инструкция по сканированию -->
+            <div class="scan-instruction hidden" id="scan-instruction">
+                🔍 Наведите на предмет и нажмите ПРОБЕЛ для сканирования
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем JS файлы -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/game-data.js"></script>
+    <script src="js/game-engine.js"></script>
+    <script src="js/effects.js"></script>
+
+</body>
+</html>
